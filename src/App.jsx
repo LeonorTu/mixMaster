@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import {
   About,
   HomeLayout,
@@ -6,7 +6,9 @@ import {
   Error,
   Newsletter,
   Cocktail,
-} from './pages'
+} from './pages';
+
+import { loader as landingLoader } from './pages/Landing';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+        loader: landingLoader,
       },
       {
         path: 'about',
@@ -32,10 +35,10 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
 const App = () => {
-  return <RouterProvider router={router} />
-}
+  return <RouterProvider router={router} />;
+};
 
-export default App
+export default App;
